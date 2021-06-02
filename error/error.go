@@ -16,7 +16,7 @@ func add(a, b *int) (c int, err error) {
 	return
 }
 func main() {
-	x, y := 1, 2
+	x, y := 1, -2
 	z, err := add(&x, &y)
 	if err != nil {
 		fmt.Println(err.Error())
