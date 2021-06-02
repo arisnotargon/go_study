@@ -1,6 +1,7 @@
 package main
 
 // 学院君的示例单链表
+// https://geekr.dev/posts/go-data-structure-linked-list
 import (
 	"fmt"
 )
