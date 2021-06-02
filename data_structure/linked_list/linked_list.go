@@ -64,6 +64,24 @@ func (t *Node) LookUp(v int) bool {
 	return false
 }
 
+// Del 删除从0开始的第i个元素
+func (t *Node) Del(i int) bool {
+	size := t.Size()
+	if i >= size {
+		return false
+	}
+	if i == 0 {
+		*t = *t.next
+		return true
+	}
+
+	for j := 0; j < i-1; j++ {
+		t = t.next
+	}
+	t.next = t.next.next
+	return true
+}
+
 func main() {
 	head := NewLinkedList(1)
 
@@ -74,4 +92,6 @@ func main() {
 	head.Traverse()
 	fmt.Println(head.Size())
 	fmt.Println(head.LookUp(2))
+	head.Del(3)
+	head.Traverse()
 }
